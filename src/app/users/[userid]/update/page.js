@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import "../../../../style.css";
 
-export default function update({ params }) {
+export default function Update({ params }) {
   let id = params.userid;
   const [name, setName] = useState("");
   const [age, setAge] = useState("");

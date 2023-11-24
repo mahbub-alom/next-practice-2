@@ -16,7 +16,7 @@ export default async function Page(){
             <h1>User list</h1>
             {
                 users.map(item=>(
-                    <div className="user-item">
+                    <div key={item.id} className="user-item">
                         <span><Link href={`users/${item.id}`}>{item.name}</Link></span>
                         <span><Link href={`users/${item.id}/update`}>Edit</Link></span>
                         <DeleteUser id={item.id}/>
