@@ -1,0 +1,46 @@
+.input-field{
+display: flex;
+margin: 10px;
+height: 30px;
+width: 300px;
+}
+
+.btn{
+    background-color: skyblue;
+    color: white;
+    border: 0;
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.add-user{
+    margin-top: 100px;
+    text-align: -webkit-center;
+}
+.user-item span{
+    display: inline-block;
+    width: 200px;
+}
+
+.input{
+    height: 35px;
+    width: 300px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+.btnAddProduct{
+    height: 35px;
+    width: 300px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: skyblue;
+    border: 0;
+    cursor: pointer;
+    color: white;
+
+}
