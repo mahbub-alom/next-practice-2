@@ -10,7 +10,7 @@ export default function Update({ params }) {
 
   useEffect(() => {
     getUserDetails();
-  }, []);
+  }, [getUserDetails()]);
 
   const getUserDetails = async () => {
     let data = await fetch("http://localhost:3000/api/users/" + id);
