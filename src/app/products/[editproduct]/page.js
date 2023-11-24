@@ -11,7 +11,7 @@ export default function Page(props) {
 
   useEffect(() => {
     getProductDetails();
-  }, []);
+  }, [getProductDetails]);
 
   const getProductDetails = async () => {
     let productId = props.params.editproduct;

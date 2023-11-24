@@ -10,31 +10,33 @@ export default function Update({ params }) {
 
   useEffect(() => {
     getUserDetails();
-  }, [getUserDetails()]);
+  }, [getUserDetails]);
 
   const getUserDetails = async () => {
-    let data = await fetch("http://localhost:3000/api/users/" + id);
-    data=await data.json();
-    setName(data.result.name)
-    setAge(data.result.age)
-    setEmail(data.result.email)
-
+    try {
+      let data = await fetch("http://localhost:3000/api/users/" + id);
+      data = await data.json();
+      setName(data.result.name);
+      setAge(data.result.age);
+      setEmail(data.result.email);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
-  const updateUser= async()=>{
-    let result = await fetch("http://localhost:3000/api/users/"+id,{
-        method:"PUT",
-        body:JSON.stringify({name,age,email})
-    })
+  const updateUser = async () => {
+    let result = await fetch("http://localhost:3000/api/users/" + id, {
+      method: "PUT",
+      body: JSON.stringify({ name, age, email }),
+    });
     result = await result.json();
 
-    if(result.success){
-        alert("user information updated success")
+    if (result.success) {
+      alert("user information updated success");
+    } else {
+      alert("please try again with valid input");
     }
-    else{
-        alert("please try again with valid input")
-    }
-  }
+  };
 
   return (
     <div className="add-user">
@@ -59,7 +61,9 @@ export default function Update({ params }) {
         onChange={(e) => setEmail(e.target.value)}
         className="input-field"
       />
-      <button onClick={updateUser} className="btn">Update User</button>
+      <button onClick={updateUser} className="btn">
+        Update User
+      </button>
     </div>
   );
 }
